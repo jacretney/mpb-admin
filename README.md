@@ -4,7 +4,7 @@ Substratum is an admin panel for the official Minecraft Bedrock Server Software.
 The goal is to have an admin panel accessible at a web address which talks to the Minecraft Server, allowing you to manage the server without having to SSH in and edit config files.
 
 When it's done, you'll be able to:
-- Update and manage the `server.properties` file
+- Update and manage the `server.properties` file - this works I think
 - Create and manage various worlds
 - Issue commands to the server, eg `start`, `stop`, `logs` etc
 - Configure commands on a schedule
