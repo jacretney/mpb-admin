@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Substratum\App\Http\Controllers\Server\ServerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/server', [ServerController::class, 'show'])->middleware(['auth', 'verified'])->name('server');
+
+Route::get('/worlds', function () {
+    return Inertia::render('Worlds');
+})->middleware(['auth', 'verified'])->name('worlds');
 
 require __DIR__.'/auth.php';

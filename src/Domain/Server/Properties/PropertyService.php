@@ -24,7 +24,7 @@ class PropertyService
     }
 
     public function setProperties(Collection $properties): void
-    {       
+    {
         $properties->each(function (array $property) {
             Property::where('key', $property['key'])
                 ->update([

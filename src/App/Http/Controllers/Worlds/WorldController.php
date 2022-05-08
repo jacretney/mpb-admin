@@ -1,12 +1,10 @@
 <?php
 
-namespace Substratum\App\Http\Controllers\WorldController;
+namespace Substratum\App\Http\Controllers\Worlds;
 
-use Illuminate\Http\Request;
 use Substratum\App\Http\Controllers\Controller;
 use Substratum\App\Http\Requests\CreateWorldRequest;
 use Substratum\Domain\Worlds\CreateOptionEnum;
-use Substratum\Domain\Worlds\World;
 use Substratum\Domain\Worlds\WorldService;
 
 class WorldController extends Controller
