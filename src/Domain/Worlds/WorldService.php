@@ -2,22 +2,41 @@
 
 namespace Substratum\Domain\Worlds;
 
+use Illuminate\Support\Collection;
+use RuntimeException;
+use Substratum\Domain\Server\Properties\PropertyEnum;
+use Substratum\Domain\Server\Properties\PropertyService;
+use ZipArchive;
+
 class WorldService
 {
+    public function __construct(
+        private PropertyService $propertyService
+    ){}
+
     public function create(CreateOptionEnum $createOption, array $attributes): World
     {
-        // TODO: Move this to a repository
-        $world = new World($attributes);
-        $world->save();
-
         if ($createOption === CreateOptionEnum::Existing) {
-            // Upload world data
+            $zip = new ZipArchive();
+            
+            if ($zip->open($attributes['file']) === FALSE) {
+                throw new RuntimeException('Could not open zip file.');
+            }
 
-            return $world;
+            $zip->extractTo($attributes['path'], $attributes['file']);
+            $zip->close();
+        } else {
+            $properties = Collection::wrap([
+                [
+                    'key' => PropertyEnum::LevelName,
+                    'value' => $attributes['name'],
+                ],
+            ]);
+
+            $this->propertyService->setProperties($properties);
         }
 
-        // Set world data in server properties
-        
+        $world = World::create($attributes);
         return $world;
     }
 

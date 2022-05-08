@@ -23,8 +23,13 @@ class PropertyService
             });
     }
 
-    public function writeProperties(): void
-    {
-        
+    public function setProperties(Collection $properties): void
+    {       
+        $properties->each(function (array $property) {
+            Property::where('key', $property['key'])
+                ->update([
+                    'value' => $property['value'],
+                ]);
+        });
     }
 }
