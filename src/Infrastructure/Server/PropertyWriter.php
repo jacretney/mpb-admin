@@ -10,11 +10,12 @@ class PropertyWriter
 {
     private const FILE_NAME = 'server.properties';
 
-    private ?string $path;
+    private ?string $path = null;
 
-    public function __construct(?string $path = null)
+    public function setPath(string $path): self
     {
-        $this->path = $path ?? public_path();
+        $this->path = $path;
+        return $this;
     }
 
     public function write(): void

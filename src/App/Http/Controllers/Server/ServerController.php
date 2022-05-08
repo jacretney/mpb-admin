@@ -12,7 +12,9 @@ use Substratum\Domain\Server\Properties\PropertyService;
 
 class ServerController extends Controller
 {
-    public function __construct(private PropertyService $propertyService){}
+    public function __construct(
+        private PropertyService $propertyService,
+    ){}
 
     public function show()
     {
