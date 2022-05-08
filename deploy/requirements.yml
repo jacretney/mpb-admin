@@ -1,0 +1,8 @@
+roles:
+  - name: geerlingguy.php
+  - name: geerlingguy.php-versions
+  - name: nginxinc.nginx
+  - name: geerlingguy.mysql
+
+collections:
+  - name: community.general

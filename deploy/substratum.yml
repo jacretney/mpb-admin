@@ -1,0 +1,67 @@
+---
+# This playbook deploys the Substratum web application
+
+- hosts: all
+  
+  vars_files:
+    - vars/main.yml
+  
+  roles:
+    # - { role: geerlingguy.php-versions }
+    # - { role: geerlingguy.php }
+    # - { role: nginxinc.nginx }
+    # - { role: geerlingguy.mysql, become: yes }
+
+  tasks:
+    - name: Create app group
+      ansible.builtin.group:
+        name: app
+        state: present
+
+    - name: Create app user
+      ansible.builtin.user:
+        name: app
+        group: app
+
+    - name: Install composer
+      ansible.builtin.apt:
+        name: composer
+        state: present
+    
+    - name: Ensure /var/www/html exists
+      ansible.builtin.file:
+        path: /var/www/html
+        state: directory
+        owner: app
+        group: app
+        mode: '0755'
+
+    - name: Checkout repository
+      ansible.builtin.git:
+        repo: 'https://github.com/jacretney/substratum'
+        dest: /tmp/checkout
+        force: yes
+
+    - name: Ensure /var/www/html/substratum permissions
+      ansible.builtin.file:
+        path: /var/www/html/substratum
+        state: directory
+        recurse: yes
+        owner: app
+        group: app
+
+    - name: Setup nginx # todo
+
+    - name: Composer Install
+      ansible.builtin.command: composer install
+      become_user: app
+      args: 
+        chdir: /var/www/html/substratum
+      environment:
+        COMPOSER_NO_INTERACTION: "1"
+
+    - name: Setup env # todo
+
+    - name: Artisan migrate # todo
+
+    

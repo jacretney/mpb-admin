@@ -1,0 +1,30 @@
+php_version: "8.1"
+php_memory_limit: "128M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "256M"
+php_packages:
+  - php
+  - php-cli
+  - php-common
+  - php-gd
+  - php-mbstring
+  - php-apcu
+  - php-xml
+  - php-bcmath
+  - php-curl
+  - php-mbstring
+  - php-xml
+
+mysql_packages:
+  - default-mysql-server
+
+mysql_databases:
+  - name: substratum
+    collation: utf8_general_ci
+    encoding: utf8
+    replicate: 0
+
+mysql_users:
+  - name: laravel
+    password: supersecret
+    priv: 'substratum.*:ALL'
