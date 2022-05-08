@@ -2,7 +2,7 @@
 
 namespace Substratum\Domain\Worlds;
 
-enum CreateOption
+enum CreateOptionEnum
 {
     case Fresh;
     case Existing;

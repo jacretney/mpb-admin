@@ -17,8 +17,14 @@ class PropertyService
             ->each(function (PropertyEnum $property) {
                 Property::create([
                     'name' => $property->name,
-                    'value' => $property->value,
+                    'key' => $property->value,
+                    'value' => $property->getDefault(),
                 ]);     
             });
+    }
+
+    public function writeProperties(): void
+    {
+        
     }
 }

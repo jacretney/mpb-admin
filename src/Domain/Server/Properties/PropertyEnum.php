@@ -5,32 +5,32 @@ namespace Substratum\Domain\Server\Properties;
 enum PropertyEnum: string
 {
     case Gamemode = 'gamemode';
-    case ForceGamemode = 'force-gamemode';
+    case ForceGamemode = 'forceGamemode';
     case Difficulty = 'difficulty';
-    case LevelType = 'level-type';
-    case ServerName = 'server-name';
-    case MaxPlayers = 'max-players';
-    case ServerPort = 'server-port';
-    case ServerPortV6 = 'server-port-v6';
-    case LevelName = 'level-name';
-    case LevelSeed = 'level-seed';
-    case OnlineMode = 'online-mode';
-    case AllowList = 'allow-list';
-    case AllowCheats = 'allow-cheats';
-    case ViewDistance = 'view-distance';
-    case PlayerIdleTimeout = 'player-idle-timeout';
-    case MaxThreads = 'max-threads';
-    case TickDistance = 'tick-distance';
-    case DefaultPlayerPermissionLevel = 'default-player-permission-level';
-    case TexturepackRequired = 'texture-pack-required';
-    case ContentLogFileEnabled = 'content-log-file-enabled';
-    case CompressionThreshold = 'compression-threshold';
-    case ServerAuthoritativeMovement = 'server-authoritative-movement';
-    case PlayerMovementScoreThreshold = 'player-movement-score-threshold';
-    case PlayerMovementActionDirectionThreshold = 'player-movement-action-direction-threshold';
-    case PlayerMovementDistanceThreshold = 'player-movement-distance-threshold';
-    case PlayerMovementDurationThresholdInMs = 'player-movement-duration-threshold-in-ms';
-    case CorrectPlayerMovement = 'correct-player-movement';
+    case LevelType = 'levelType';
+    case ServerName = 'serverName';
+    case MaxPlayers = 'maxPlayers';
+    case ServerPort = 'serverPort';
+    case ServerPortV6 = 'serverPortV6';
+    case LevelName = 'levelName';
+    case LevelSeed = 'levelSeed';
+    case OnlineMode = 'onlineMode';
+    case AllowList = 'allowList';
+    case AllowCheats = 'allowCheats';
+    case ViewDistance = 'viewDistance';
+    case PlayerIdleTimeout = 'playerIdleTimeout';
+    case MaxThreads = 'maxThreads';
+    case TickDistance = 'tickDistance';
+    case DefaultPlayerPermissionLevel = 'defaultPlayerPermissionLevel';
+    case TexturepackRequired = 'texturepackRequired';
+    case ContentLogFileEnabled = 'contentLogFileEnabled';
+    case CompressionThreshold = 'compressionThreshold';
+    case ServerAuthoritativeMovement = 'serverAuthoritativeMovement';
+    case PlayerMovementScoreThreshold = 'playerMovementScoreThreshold';
+    case PlayerMovementActionDirectionThreshold = 'playerMovementActionDirectionThreshold';
+    case PlayerMovementDistanceThreshold = 'playerMovementDistanceThreshold';
+    case PlayerMovementDurationThresholdInMs = 'playerMovementDurationThresholdInMs';
+    case CorrectPlayerMovement = 'correctPlayerMovement';
 
     public function getDefault(): mixed
     {

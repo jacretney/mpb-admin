@@ -4,13 +4,13 @@ namespace Substratum\Domain\Worlds;
 
 class WorldService
 {
-    public function create(CreateOption $createOption, array $attributes): World
+    public function create(CreateOptionEnum $createOption, array $attributes): World
     {
         // TODO: Move this to a repository
         $world = new World($attributes);
         $world->save();
 
-        if ($createOption === CreateOption::Existing) {
+        if ($createOption === CreateOptionEnum::Existing) {
             // Upload world data
 
             return $world;

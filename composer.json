@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "jacretney/substratum",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A Minecraft Bedrock Edition Server Manager.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
